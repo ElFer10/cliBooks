@@ -1,0 +1,51 @@
+# clipub configuration — ~/.config/clipub/config.toml
+# All keys are optional. Settings changed inside the app (:set, themes, width)
+# are remembered in ~/.local/share/clipub/prefs.toml and override this file.
+
+[general]
+language = "auto"            # auto | es | en
+library_dirs = ["~/Books"]   # folders scanned for .epub files in the library view
+# tts_command = "say -f -"   # text is written to stdin (macOS: say, Linux: espeak-ng --stdin)
+# dict_command = "sdcv -n --utf8-output %s"   # %s = selected word
+osc52 = true                 # copy to the clipboard through the terminal (works over SSH)
+smartcase = true
+wrap_search = true
+key_timeout_ms = 1000        # time to wait for the rest of a key sequence ("gg")
+
+[reader]
+theme = "original"           # original quiet paper bold calm focus sepia night (or your own)
+width = 72                   # text column width
+justify = true
+hyphenate = true             # needs a hyph_xx.dic (LibreOffice/hunspell) — see README
+# hyphen_language = "es"
+paragraphs = "auto"          # auto | spaced | indented
+line_spacing = 1             # 1 | 2
+book_styles = true           # honour publisher CSS (alignment, emphasis, small caps…)
+mode = "paged"               # paged | scroll
+columns = "auto"             # 1 | 2 | auto (two pages side by side on wide terminals)
+column_gap = 6
+margin_top = 1
+margin_bottom = 0
+show_header = true
+show_status = true
+images = "auto"              # auto | kitty | iterm | sixel | blocks | none
+image_max_rows = 0           # 0 = up to the page height
+
+# Custom theme (inherits from a built-in one):
+# [themes.solarized]
+# inherits = "paper"
+# fg = "#657b83"
+# bg = "#fdf6e3"
+# link = "#268bd2"
+# highlights = ["#b58900", "#859900", "#268bd2", "#d33682", "#6c71c4"]
+
+# Key bindings: action = "key" or ["k1", "k2"]. Vim notation: <C-f> <Space> <CR> <Esc> <Tab> <F1>…
+# Assigning a key here removes it from any other action in the same mode.
+# [keys.reader]
+# page_down = ["<Space>", "l", "<C-f>"]
+# quit = ["q", "ZZ"]
+# unmap = ["C"]
+# [keys.visual]
+# highlight = ["H", "<CR>"]
+# [keys.list]
+# select = ["<CR>", "l"]
