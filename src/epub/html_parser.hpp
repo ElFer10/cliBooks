@@ -5,7 +5,7 @@
 
 #include "epub/document.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 /// Loads a stylesheet by archive path (cached by the caller).
 using StyleLoader = std::function<const css::StyleSheet*(const std::string& path)>;
@@ -21,4 +21,4 @@ Chapter parseChapter(const std::string& xhtml, const std::string& path, const St
 /// Makes sloppy HTML a bit closer to XML (void elements, stray ampersands).
 std::string repairHtml(const std::string& html);
 
-}  // namespace clipub
+}  // namespace clibooks

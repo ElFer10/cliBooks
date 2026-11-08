@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <array>
 
-namespace clipub::utf8 {
+namespace clibooks::utf8 {
 
 char32_t decode(std::string_view s, size_t& i) {
     auto c = static_cast<unsigned char>(s[i]);
@@ -191,4 +191,4 @@ std::string fit(std::string_view s, int cols) {
     return out;
 }
 
-}  // namespace clipub::utf8
+}  // namespace clibooks::utf8

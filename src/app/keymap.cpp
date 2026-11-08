@@ -6,7 +6,7 @@
 #include "util/strings.hpp"
 #include "util/utf8.hpp"
 
-namespace clipub {
+namespace clibooks {
 namespace {
 
 struct ActionInfo {
@@ -257,4 +257,4 @@ Keymap::Keymap() {
     B(Mode::Hints, A::ExitMode, {"<Esc>"});
 }
 
-}  // namespace clipub
+}  // namespace clibooks

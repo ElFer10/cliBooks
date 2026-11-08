@@ -9,7 +9,7 @@
 #include <string_view>
 #include <vector>
 
-namespace clipub::css {
+namespace clibooks::css {
 
 enum class Align { Left, Center, Right, Justify };
 enum class VAlign { Baseline, Super, Sub };
@@ -50,4 +50,4 @@ private:
     std::vector<Rule> rules_;
 };
 
-}  // namespace clipub::css
+}  // namespace clibooks::css

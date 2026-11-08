@@ -10,7 +10,7 @@
 
 namespace fs = std::filesystem;
 
-namespace clipub {
+namespace clibooks {
 namespace {
 
 char32_t lowerCp(char32_t c) {
@@ -167,4 +167,4 @@ std::vector<size_t> Hyphenator::points(std::string_view word) const {
     return result;
 }
 
-}  // namespace clipub
+}  // namespace clibooks

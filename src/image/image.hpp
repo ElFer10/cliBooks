@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 
-namespace clipub::img {
+namespace clibooks::img {
 
 enum class Protocol { None, Blocks, Sixel, Kitty, Iterm };
 
@@ -61,4 +61,4 @@ std::string render(Cache& cache, const Placement& p, Protocol proto, int cellW, 
 /// Escape sequence that removes all kitty placements.
 std::string kittyClear();
 
-}  // namespace clipub::img
+}  // namespace clibooks::img

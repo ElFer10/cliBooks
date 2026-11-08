@@ -1,4 +1,4 @@
-// clipub — a terminal EPUB reader with vim-style keys.
+// cliBooks — a terminal EPUB reader with vim-style keys.
 #include <chrono>
 #include <cstdio>
 #include <cstring>
@@ -20,15 +20,15 @@
 #include "util/utf8.hpp"
 
 namespace fs = std::filesystem;
-using namespace clipub;
+using namespace clibooks;
 
 static void usage() {
     std::puts(
-        "clipub " CLIPUB_VERSION " — terminal EPUB reader\n\n"
+        "cliBooks " CLIBOOKS_VERSION " — terminal EPUB reader\n\n"
         "Usage:\n"
-        "  clipub [options] [book.epub | unpacked-epub-folder]\n\n"
+        "  clibooks [options] [book.epub | unpacked-epub-folder]\n\n"
         "Options:\n"
-        "  -c, --config FILE     use FILE instead of ~/.config/clipub/config.toml\n"
+        "  -c, --config FILE     use FILE instead of ~/.config/clibooks/config.toml\n"
         "  -t, --theme NAME      theme for this session (original quiet paper bold calm focus sepia night)\n"
         "  -i, --images PROTO    auto | kitty | iterm | sixel | blocks | none\n"
         "  -w, --width N         text column width\n"
@@ -48,7 +48,7 @@ static int dumpBook(const fs::path& p, const Config& cfg, bool statsOnly) {
     auto t0 = std::chrono::steady_clock::now();
     auto book = Book::open(p, err, po);
     if (!book) {
-        std::fprintf(stderr, "clipub: %s: %s\n", p.string().c_str(), err.c_str());
+        std::fprintf(stderr, "clibooks: %s: %s\n", p.string().c_str(), err.c_str());
         return 1;
     }
     auto t1 = std::chrono::steady_clock::now();
@@ -115,7 +115,7 @@ int main(int argc, char** argv) {
         std::string a = argv[i];
         auto next = [&]() -> std::string {
             if (i + 1 >= argc) {
-                std::fprintf(stderr, "clipub: %s needs a value\n", a.c_str());
+                std::fprintf(stderr, "clibooks: %s needs a value\n", a.c_str());
                 std::exit(2);
             }
             return argv[++i];
@@ -124,7 +124,7 @@ int main(int argc, char** argv) {
             usage();
             return 0;
         } else if (a == "-v" || a == "--version") {
-            std::puts("clipub " CLIPUB_VERSION);
+            std::puts("cliBooks " CLIBOOKS_VERSION);
             return 0;
         } else if (a == "-c" || a == "--config") configPath = next();
         else if (a == "-t" || a == "--theme") theme = next();
@@ -135,7 +135,7 @@ int main(int argc, char** argv) {
         else if (a == "--check") check = true;
         else if (a == "--write-config") writeConfig = true;
         else if (!a.empty() && a[0] == '-' && a != "-") {
-            std::fprintf(stderr, "clipub: unknown option %s\n", a.c_str());
+            std::fprintf(stderr, "clibooks: unknown option %s\n", a.c_str());
             return 2;
         } else file = a;
     }
@@ -147,7 +147,7 @@ int main(int argc, char** argv) {
             return 0;
         }
         if (!platform::writeFileAtomic(p, Config::exampleToml())) {
-            std::fprintf(stderr, "clipub: cannot write %s\n", p.string().c_str());
+            std::fprintf(stderr, "clibooks: cannot write %s\n", p.string().c_str());
             return 1;
         }
         std::printf("wrote %s\n", p.string().c_str());
@@ -166,13 +166,13 @@ int main(int argc, char** argv) {
 
     if (dump || check) {
         if (!file) {
-            std::fprintf(stderr, "clipub: --dump/--check need a book\n");
+            std::fprintf(stderr, "clibooks: --dump/--check need a book\n");
             return 2;
         }
         return dumpBook(*file, cfg, check);
     }
     if (!isatty(0) || !isatty(1)) {
-        std::fprintf(stderr, "clipub: needs an interactive terminal\n");
+        std::fprintf(stderr, "clibooks: needs an interactive terminal\n");
         return 1;
     }
     App app(cfg);

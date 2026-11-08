@@ -6,7 +6,7 @@
 #include "util/strings.hpp"
 #include "util/utf8.hpp"
 
-namespace clipub {
+namespace clibooks {
 namespace {
 
 struct Piece {
@@ -931,4 +931,4 @@ size_t ChapterLayout::pageForLine(size_t line) const {
     return static_cast<size_t>(std::distance(pages.begin(), it)) - 1;
 }
 
-}  // namespace clipub
+}  // namespace clibooks

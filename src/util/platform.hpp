@@ -4,10 +4,10 @@
 #include <optional>
 #include <string>
 
-namespace clipub::platform {
+namespace clibooks::platform {
 
-std::filesystem::path configDir();  // $XDG_CONFIG_HOME/clipub or ~/.config/clipub
-std::filesystem::path dataDir();    // $XDG_DATA_HOME/clipub or ~/.local/share/clipub
+std::filesystem::path configDir();  // $XDG_CONFIG_HOME/clibooks or ~/.config/clibooks
+std::filesystem::path dataDir();    // $XDG_DATA_HOME/clibooks or ~/.local/share/clibooks
 
 std::optional<std::string> readFile(const std::filesystem::path& p);
 bool writeFileAtomic(const std::filesystem::path& p, const std::string& data);
@@ -39,4 +39,4 @@ bool isMac();
 std::string defaultTtsCommand();
 std::string defaultDictCommand();
 
-}  // namespace clipub::platform
+}  // namespace clibooks::platform

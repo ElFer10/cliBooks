@@ -8,7 +8,7 @@
 #include "util/strings.hpp"
 #include "util/utf8.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 Reader::Reader(Book& book, Config& cfg, img::Cache& images, img::Protocol proto)
     : book_(book), cfg_(cfg), images_(images), proto_(proto) {}
@@ -511,4 +511,4 @@ std::string Reader::textBetween(const Position& a, const Position& b) const {
     return r;
 }
 
-}  // namespace clipub
+}  // namespace clibooks

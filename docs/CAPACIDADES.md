@@ -1,4 +1,4 @@
-# Qué puede y qué no puede hacer clipub (frente a Apple Books)
+# Qué puede y qué no puede hacer cliBooks (frente a Apple Books)
 
 ## ✅ Lo que hace
 
@@ -50,7 +50,7 @@
 
 ## ⚠️ Lo que hace de forma aproximada
 
-| Función de Books | Aproximación en clipub |
+| Función de Books | Aproximación en cliBooks |
 |---|---|
 | Elegir fuente y tamaño | La fuente la decide el terminal; el “tamaño” se emula con el ancho de columna. |
 | Colores exactos de tema | En terminales de 256 colores se usa el color más cercano. |
@@ -72,7 +72,7 @@
 - **SVG vectorial** (solo se muestran las `<image>` dentro de un SVG) y **MathML renderizado**.
 - **Escritura vertical (japonés tategaki) y maquetación RTL completa** (el texto árabe/hebreo
   depende del soporte bidi del terminal).
-- **PDF y audiolibros** (Books los abre; clipub solo EPUB).
+- **PDF y audiolibros** (Books los abre; cliBooks solo EPUB).
 - **Tienda, sincronización con iCloud, colecciones, objetivos de lectura, “Want to Read”**.
 - **Miniaturas de páginas en la barra de desplazamiento**.
 - **Zoom/ampliar imagen a pantalla completa** con gestos (posible mejora futura con un visor dedicado).

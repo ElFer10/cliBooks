@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds tests/fixtures/sample.epub: a small EPUB 3 exercising the features clipub
+"""Builds tests/fixtures/sample.epub: a small EPUB 3 exercising the features cliBooks
 supports (TOC, footnotes, images, tables, lists, quotes, code, links, CSS).
 Usage: python3 tests/make_sample_epub.py [output.epub]"""
 import struct
@@ -104,8 +104,8 @@ NAV = """<?xml version="1.0" encoding="UTF-8"?>
 OPF = """<?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dc:identifier id="uid">urn:uuid:clipub-sample-0001</dc:identifier>
-<dc:title>El faro (EPUB de prueba)</dc:title><dc:creator>clipub</dc:creator><dc:language>es</dc:language>
+<dc:identifier id="uid">urn:uuid:clibooks-sample-0001</dc:identifier>
+<dc:title>El faro (EPUB de prueba)</dc:title><dc:creator>cliBooks</dc:creator><dc:language>es</dc:language>
 <meta property="dcterms:modified">2026-11-07T00:00:00Z</meta>
 </metadata>
 <manifest>

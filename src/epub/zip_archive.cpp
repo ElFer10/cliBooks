@@ -10,7 +10,7 @@
 
 namespace fs = std::filesystem;
 
-namespace clipub {
+namespace clibooks {
 namespace {
 
 class ZipArchive final : public Archive {
@@ -113,4 +113,4 @@ std::unique_ptr<Archive> Archive::open(const fs::path& path, std::string& error)
     return z;
 }
 
-}  // namespace clipub
+}  // namespace clibooks

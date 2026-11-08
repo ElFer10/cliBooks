@@ -56,9 +56,9 @@ y la apariencia se controla inyectando hojas de estilo de usuario generadas a pa
 - Temas (BookEPUB): **Original, Quiet, Paper, Bold, Calm, Focus** (+ “Customized”),
   “Auto-Night Theme”.
 
-## Cómo se trasladó cada idea a clipub
+## Cómo se trasladó cada idea a cliBooks
 
-| Books | clipub |
+| Books | cliBooks |
 |---|---|
 | WebKit + CSS inyectado | parser XHTML propio + subconjunto CSS + motor de maquetación en rejilla |
 | Paginación en segundo plano | maquetación completa al abrir (≤0,1 s en libros de 2000 páginas, build Release) |

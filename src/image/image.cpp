@@ -15,7 +15,7 @@
 
 #include "util/strings.hpp"
 
-namespace clipub::img {
+namespace clibooks::img {
 
 Protocol parseProtocol(const std::string& s) {
     std::string l = str::lower(s);
@@ -371,4 +371,4 @@ std::string render(Cache& cache, const Placement& p, Protocol proto, int cellW, 
     }
 }
 
-}  // namespace clipub::img
+}  // namespace clibooks::img

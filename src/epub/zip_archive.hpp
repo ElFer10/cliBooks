@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-namespace clipub {
+namespace clibooks {
 
 /// Read-only access to the EPUB container. Supports zipped .epub files and
 /// unpacked EPUB folders (Books also accepts both: org.idpf.epub-container / -folder).
@@ -18,4 +18,4 @@ public:
     virtual std::vector<std::string> list() const = 0;
 };
 
-}  // namespace clipub
+}  // namespace clibooks

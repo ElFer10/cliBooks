@@ -8,7 +8,7 @@
 
 #include "util/utf8.hpp"
 
-namespace clipub::str {
+namespace clibooks::str {
 
 std::string_view trim(std::string_view s) {
     size_t a = 0, b = s.size();
@@ -243,4 +243,4 @@ std::string formatTime(int64_t t) {
     return buf;
 }
 
-}  // namespace clipub::str
+}  // namespace clibooks::str

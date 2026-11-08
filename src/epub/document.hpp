@@ -8,7 +8,7 @@
 
 #include "epub/css.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 enum Attr : uint16_t {
     kNone = 0,
@@ -73,4 +73,4 @@ struct Chapter {
     bool linear = true;
 };
 
-}  // namespace clipub
+}  // namespace clibooks

@@ -13,7 +13,7 @@
 
 #include "util/utf8.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 bool Terminal::init() {
     std::setlocale(LC_ALL, "");
@@ -215,4 +215,4 @@ void Terminal::writeRaw(const std::string& s) {
 #endif
 }
 
-}  // namespace clipub
+}  // namespace clibooks

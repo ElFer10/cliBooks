@@ -9,7 +9,7 @@
 #include "app/keymap.hpp"
 #include "layout/layout.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 /// Reading theme. Colors are 0xRRGGBB; `useTerminal` keeps the terminal's own
 /// foreground/background (the terminal counterpart of Books' "Original" theme
@@ -73,4 +73,4 @@ struct Config {
     static std::string exampleToml();
 };
 
-}  // namespace clipub
+}  // namespace clibooks

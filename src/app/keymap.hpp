@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-namespace clipub {
+namespace clibooks {
 
 enum class Mode { Reader, Visual, List, Hints };
 
@@ -57,4 +57,4 @@ private:
 
 Mode modeFromName(const std::string& s, bool& ok);
 
-}  // namespace clipub
+}  // namespace clibooks

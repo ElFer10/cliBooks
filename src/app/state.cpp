@@ -9,7 +9,7 @@
 
 namespace fs = std::filesystem;
 
-namespace clipub {
+namespace clibooks {
 
 int64_t nowSeconds() {
     return std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
@@ -118,4 +118,4 @@ bool StateStore::remove(const std::string& id) const {
     return fs::remove(dir_ / (id + ".toml"), ec);
 }
 
-}  // namespace clipub
+}  // namespace clibooks

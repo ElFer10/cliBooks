@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include <vector>
 
-namespace clipub {
+namespace clibooks {
 
 class Hyphenator {
 public:
@@ -27,4 +27,4 @@ private:
     int leftMin_ = 2, rightMin_ = 3;
 };
 
-}  // namespace clipub
+}  // namespace clibooks

@@ -1,6 +1,6 @@
-# clipub configuration — ~/.config/clipub/config.toml
+# cliBooks configuration — ~/.config/clibooks/config.toml
 # All keys are optional. Settings changed inside the app (:set, themes, width)
-# are remembered in ~/.local/share/clipub/prefs.toml and override this file.
+# are remembered in ~/.local/share/clibooks/prefs.toml and override this file.
 
 [general]
 language = "auto"            # auto | es | en

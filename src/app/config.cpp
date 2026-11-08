@@ -10,7 +10,7 @@
 
 namespace fs = std::filesystem;
 
-namespace clipub {
+namespace clibooks {
 
 std::vector<Theme> builtinThemes() {
     std::vector<Theme> v;
@@ -290,16 +290,16 @@ void Config::savePrefs() const {
     };
     toml::table root{{"reader", reader}};
     std::ostringstream ss;
-    ss << "# Written by clipub when you change settings inside the app (:set, themes…).\n"
+    ss << "# Written by cliBooks when you change settings inside the app (:set, themes…).\n"
           "# Delete this file (or run :reset) to go back to config.toml values.\n\n"
        << root << "\n";
     platform::writeFileAtomic(platform::dataDir() / "prefs.toml", ss.str());
 }
 
 std::string Config::exampleToml() {
-    return R"TOML(# clipub configuration — ~/.config/clipub/config.toml
+    return R"TOML(# cliBooks configuration — ~/.config/clibooks/config.toml
 # All keys are optional. Settings changed inside the app (:set, themes, width)
-# are remembered in ~/.local/share/clipub/prefs.toml and override this file.
+# are remembered in ~/.local/share/clibooks/prefs.toml and override this file.
 
 [general]
 language = "auto"            # auto | es | en
@@ -351,4 +351,4 @@ image_max_rows = 0           # 0 = up to the page height
 )TOML";
 }
 
-}  // namespace clipub
+}  // namespace clibooks

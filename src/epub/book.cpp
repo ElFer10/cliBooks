@@ -9,7 +9,7 @@
 
 namespace fs = std::filesystem;
 
-namespace clipub {
+namespace clibooks {
 namespace {
 
 std::string local(const char* n) {
@@ -449,4 +449,4 @@ std::optional<std::string> Book::footnoteText(const std::string& target) const {
     return out;
 }
 
-}  // namespace clipub
+}  // namespace clibooks

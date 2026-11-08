@@ -10,7 +10,7 @@
 #include "util/strings.hpp"
 #include "util/utf8.hpp"
 
-namespace clipub {
+namespace clibooks {
 namespace {
 
 std::string localName(const char* raw) {
@@ -679,4 +679,4 @@ Chapter parseChapter(const std::string& xhtml, const std::string& path, const St
     return ch;
 }
 
-}  // namespace clipub
+}  // namespace clibooks

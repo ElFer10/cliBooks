@@ -15,7 +15,7 @@
 #include "ui/terminal.hpp"
 #include "util/utf8.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 class App {
 public:
@@ -173,4 +173,4 @@ private:
     std::chrono::steady_clock::time_point lastKey_, lastSave_;
 };
 
-}  // namespace clipub
+}  // namespace clibooks

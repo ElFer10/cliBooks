@@ -12,7 +12,7 @@
 #include "layout/layout.hpp"
 #include "ui/terminal.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 struct SearchMatches {
     std::string pattern;  // folded
@@ -122,4 +122,4 @@ private:
     int rowCounter_ = 0;
 };
 
-}  // namespace clipub
+}  // namespace clibooks

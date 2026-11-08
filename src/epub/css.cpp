@@ -6,7 +6,7 @@
 
 #include "util/strings.hpp"
 
-namespace clipub::css {
+namespace clibooks::css {
 
 void Style::merge(const Style& o) {
 #define M(f) \
@@ -262,4 +262,4 @@ bool StyleSheet::paragraphsIndented() const {
     return indented > 0 && indented >= flat;
 }
 
-}  // namespace clipub::css
+}  // namespace clibooks::css

@@ -7,7 +7,7 @@
 
 #include "app/config.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 enum Pair : short {
     kPText = 1,
@@ -63,4 +63,4 @@ private:
     bool useTerminal_ = true;
 };
 
-}  // namespace clipub
+}  // namespace clibooks

@@ -18,7 +18,7 @@ cmake --build build -j
 ```
 
 ```bash
-./build/clipub libro.epub
+./build/clibooks libro.epub
 ```
 
 Dependencias del sistema:
@@ -30,20 +30,20 @@ Dependencias del sistema:
 - **Windows** (No lo he probado): MSYS2 con `mingw-w64-ucrt-x86_64-ncurses`, o PDCurses
   pasando `-DCURSES_INCLUDE_PATH=… -DCURSES_LIBRARY=…`. Imágenes: sixel en Windows Terminal ≥ 1.22.
 
-Tests: `python3 tests/make_sample_epub.py && ./build/clipub_tests`. El script genera
+Tests: `python3 tests/make_sample_epub.py && ./build/clibooks_tests`. El script genera
 `tests/fixtures/sample.epub`, un EPUB 3 de prueba con índice, notas al pie, imágenes, tabla,
 listas, cita y código.
 
 ## Uso
 
 ```bash
-clipub                      # biblioteca (libros recientes + carpetas de library_dirs)
-clipub libro.epub           # abre el libro en la última posición leída
-clipub carpeta-epub/        # también EPUB desempaquetados
-clipub -t night -w 80 libro.epub
-clipub --check libro.epub   # estadísticas de parseo/maquetación
-clipub --dump libro.epub    # texto maquetado a stdout
-clipub --write-config       # crea ~/.config/clipub/config.toml de ejemplo
+clibooks                    # biblioteca (libros recientes + carpetas de library_dirs)
+clibooks libro.epub         # abre el libro en la última posición leída
+clibooks carpeta-epub/      # también EPUB desempaquetados
+clibooks -t night -w 80 libro.epub
+clibooks --check libro.epub # estadísticas de parseo/maquetación
+clibooks --dump libro.epub  # texto maquetado a stdout
+clibooks --write-config     # crea ~/.config/clibooks/config.toml de ejemplo
 ```
 
 ## Atajos por defecto (vim)
@@ -117,9 +117,9 @@ Pulsa `g?` o `F1` dentro de la app para ver la tabla generada a partir de tu con
 
 ## Configuración
 
-`~/.config/clipub/config.toml` (o `$XDG_CONFIG_HOME/clipub/config.toml`). Ver
+`~/.config/clibooks/config.toml` (o `$XDG_CONFIG_HOME/clibooks/config.toml`). Ver
 [config.example.toml](config.example.toml). Lo que cambias dentro de la app (`:set`, tema,
-ancho) se recuerda en `~/.local/share/clipub/prefs.toml` y tiene prioridad; `:reset` lo borra.
+ancho) se recuerda en `~/.local/share/clibooks/prefs.toml` y tiene prioridad; `:reset` lo borra.
 
 Atajos: cada acción admite una tecla o una lista, en notación vim. Asignar una tecla la quita
 de cualquier otra acción del mismo modo; `unmap` elimina atajos.
@@ -154,10 +154,10 @@ color de 24 bits o 256 colores), que funcionan en cualquier terminal y dentro de
 
 Como `-webkit-hyphens: auto` de Books, se usan patrones Liang/TeX en el formato de
 LibreOffice/hunspell (`hyph_es.dic`, `hyph_en_US.dic`…). Se buscan en
-`~/.local/share/clipub/hyphen/`, `/usr/share/hyphen/` (paquete `hyphen-es`, `hyphen-en-us`…
+`~/.local/share/clibooks/hyphen/`, `/usr/share/hyphen/` (paquete `hyphen-es`, `hyphen-en-us`…
 en Debian/Ubuntu) y en las extensiones de LibreOffice. En macOS no vienen de serie: copia el
 `.dic` del repositorio [LibreOffice/dictionaries](https://github.com/LibreOffice/dictionaries)
-a `~/.local/share/clipub/hyphen/`. Sin diccionario se usan solo los guiones blandos (`&shy;`)
+a `~/.local/share/clibooks/hyphen/`. Sin diccionario se usan solo los guiones blandos (`&shy;`)
 del propio libro.
 
 ### Diccionario y voz
@@ -168,9 +168,9 @@ del propio libro.
 
 ## Datos
 
-- `~/.local/share/clipub/books/<id>.toml`: posición, progreso, tiempo de lectura, marcadores,
+- `~/.local/share/clibooks/books/<id>.toml`: posición, progreso, tiempo de lectura, marcadores,
   resaltados y notas de cada libro (texto plano, fácil de respaldar o sincronizar).
-- `~/.local/share/clipub/prefs.toml`: preferencias cambiadas en la app.
+- `~/.local/share/clibooks/prefs.toml`: preferencias cambiadas en la app.
 
 ## Estructura
 

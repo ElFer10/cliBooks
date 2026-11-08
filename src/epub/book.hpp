@@ -11,7 +11,7 @@
 #include "epub/html_parser.hpp"
 #include "epub/zip_archive.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 struct Position {
     int chapter = 0;
@@ -89,4 +89,4 @@ private:
     size_t totalLength_ = 0;
 };
 
-}  // namespace clipub
+}  // namespace clibooks

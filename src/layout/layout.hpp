@@ -10,7 +10,7 @@
 #include "epub/document.hpp"
 #include "layout/hyphen.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 enum class ParagraphStyle { Auto, Spaced, Indented };
 
@@ -80,4 +80,4 @@ void paginate(ChapterLayout& cl, int pageHeight);
 /// Width/height in cells for an image given its pixel size and the layout constraints.
 std::pair<int, int> imageCells(int pw, int ph, int maxCols, int maxRows, double aspect, int cellPixelW);
 
-}  // namespace clipub
+}  // namespace clibooks

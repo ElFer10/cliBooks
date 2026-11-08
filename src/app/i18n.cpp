@@ -5,7 +5,7 @@
 
 #include "util/strings.hpp"
 
-namespace clipub {
+namespace clibooks {
 namespace {
 
 std::string g_lang = "en";
@@ -183,4 +183,4 @@ const char* tr(std::string_view key) {
     return key.data();
 }
 
-}  // namespace clipub
+}  // namespace clibooks

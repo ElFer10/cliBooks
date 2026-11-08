@@ -15,7 +15,7 @@
 namespace fs = std::filesystem;
 using Clock = std::chrono::steady_clock;
 
-namespace clipub {
+namespace clibooks {
 
 namespace {
 
@@ -73,7 +73,7 @@ int App::run(const std::optional<fs::path>& file) {
     proto_ = img::parseProtocol(cfg_.images);
     truecolor_ = img::terminalHasTruecolor();
     if (!term_.init()) {
-        std::fprintf(stderr, "clipub: could not initialise the terminal\n");
+        std::fprintf(stderr, "clibooks: could not initialise the terminal\n");
         return 1;
     }
     term_.applyTheme(cfg_.currentTheme());
@@ -1987,4 +1987,4 @@ void App::exportNotes(const std::string& pathArg) {
     else message("export: " + p.string(), true);
 }
 
-}  // namespace clipub
+}  // namespace clibooks

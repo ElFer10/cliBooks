@@ -1,6 +1,6 @@
 #pragma once
 // Per-book persistent state (reading position, bookmarks, highlights & notes),
-// stored as TOML files in $XDG_DATA_HOME/clipub/books/<book-id>.toml.
+// stored as TOML files in $XDG_DATA_HOME/clibooks/books/<book-id>.toml.
 #include <cstdint>
 #include <filesystem>
 #include <optional>
@@ -9,7 +9,7 @@
 
 #include "epub/book.hpp"
 
-namespace clipub {
+namespace clibooks {
 
 struct Bookmark {
     Position pos;
@@ -53,4 +53,4 @@ private:
 
 int64_t nowSeconds();
 
-}  // namespace clipub
+}  // namespace clibooks

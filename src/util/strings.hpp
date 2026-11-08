@@ -5,7 +5,7 @@
 #include <string_view>
 #include <vector>
 
-namespace clipub::str {
+namespace clibooks::str {
 
 std::string_view trim(std::string_view s);
 std::string lower(std::string_view s);
@@ -36,4 +36,4 @@ uint64_t fnv1a(std::string_view s);
 std::string hex64(uint64_t v);
 std::string formatTime(int64_t unixSeconds);
 
-}  // namespace clipub::str
+}  // namespace clibooks::str

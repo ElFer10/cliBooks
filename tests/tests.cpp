@@ -15,7 +15,7 @@
 #include "util/strings.hpp"
 #include "util/utf8.hpp"
 
-using namespace clipub;
+using namespace clibooks;
 
 static int g_fail = 0, g_pass = 0;
 #define CHECK(cond)                                                       \
@@ -153,7 +153,7 @@ int main() {
     // ---- image encoders (uses the generated sample EPUB if present)
     {
         std::string err;
-        auto ar = Archive::open(CLIPUB_SOURCE_DIR "/tests/fixtures/sample.epub", err);
+        auto ar = Archive::open(CLIBOOKS_SOURCE_DIR "/tests/fixtures/sample.epub", err);
         if (ar) {
             img::Cache cache([&](const std::string& p) { return ar->read(p); });
             auto sz = cache.size("OEBPS/images/gradient.png");

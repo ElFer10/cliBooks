@@ -17,7 +17,7 @@
 
 namespace fs = std::filesystem;
 
-namespace clipub::platform {
+namespace clibooks::platform {
 
 static fs::path homeDir() {
     const char* h = std::getenv("HOME");
@@ -27,20 +27,38 @@ static fs::path homeDir() {
     return h ? fs::path(h) : fs::current_path();
 }
 
+// The app used to be called "clipub": move an old folder to the new name the
+// first time it is needed so progress, notes and settings are kept.
+static fs::path withLegacy(const fs::path& base) {
+    fs::path dir = base / "clibooks";
+    std::error_code ec;
+    if (!fs::exists(dir, ec)) {
+        fs::path old = base / "clipub";
+        if (fs::is_directory(old, ec)) fs::rename(old, dir, ec);
+    }
+    return dir;
+}
+
 fs::path configDir() {
-    if (const char* x = std::getenv("XDG_CONFIG_HOME"); x && *x) return fs::path(x) / "clipub";
+    static const fs::path dir = [] {
+        if (const char* x = std::getenv("XDG_CONFIG_HOME"); x && *x) return withLegacy(x);
 #ifdef _WIN32
-    if (const char* a = std::getenv("APPDATA")) return fs::path(a) / "clipub";
+        if (const char* a = std::getenv("APPDATA")) return withLegacy(a);
 #endif
-    return homeDir() / ".config" / "clipub";
+        return withLegacy(homeDir() / ".config");
+    }();
+    return dir;
 }
 
 fs::path dataDir() {
-    if (const char* x = std::getenv("XDG_DATA_HOME"); x && *x) return fs::path(x) / "clipub";
+    static const fs::path dir = [] {
+        if (const char* x = std::getenv("XDG_DATA_HOME"); x && *x) return withLegacy(x);
 #ifdef _WIN32
-    if (const char* a = std::getenv("LOCALAPPDATA")) return fs::path(a) / "clipub";
+        if (const char* a = std::getenv("LOCALAPPDATA")) return withLegacy(a);
 #endif
-    return homeDir() / ".local" / "share" / "clipub";
+        return withLegacy(homeDir() / ".local" / "share");
+    }();
+    return dir;
 }
 
 std::optional<std::string> readFile(const fs::path& p) {
@@ -252,4 +270,4 @@ std::string defaultDictCommand() {
     return "";  // macOS: falls back to opening dict:// in Dictionary.app
 }
 
-}  // namespace clipub::platform
+}  // namespace clibooks::platform

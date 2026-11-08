@@ -5,7 +5,7 @@
 #include <string_view>
 #include <vector>
 
-namespace clipub::utf8 {
+namespace clibooks::utf8 {
 
 /// Decodes the code point starting at s[i]; advances i. Invalid bytes yield U+FFFD.
 char32_t decode(std::string_view s, size_t& i);
@@ -46,4 +46,4 @@ std::string truncate(std::string_view s, int cols, bool ellipsis = true);
 /// Pad/truncate s to exactly `cols` columns.
 std::string fit(std::string_view s, int cols);
 
-}  // namespace clipub::utf8
+}  // namespace clibooks::utf8
